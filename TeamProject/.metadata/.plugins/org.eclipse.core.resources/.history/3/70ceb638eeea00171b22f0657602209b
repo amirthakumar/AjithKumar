@@ -1,0 +1,10 @@
+package in.vamsoft.model;
+
+public class DbProp {
+
+	String driver;
+	String url;
+	String username;
+	String password;
+
+}

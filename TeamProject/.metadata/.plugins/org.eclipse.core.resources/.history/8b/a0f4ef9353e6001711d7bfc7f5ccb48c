@@ -1,0 +1,76 @@
+select * from details
+
+truncate table details
+
+select c.customer_name,col.collection_type_id,l.loan_id,col.sum,l.loan_type_id from customer c inner join loan l on l.customer_id=c.customer_id inner join (SELECT sum(amount),collection_type_id,loan_id from  collection  where customer_id=1 and (collection_type_id ='EMI_P'  or collection_type_id ='EMI_I') group by collection_type_id,loan_id) col on l.loan_id = col.loan_id
+
+
+select c.customer_id,c.customer_name,l.loan_id,l.loan_type_id,lm.loan_description,col.sum ,col.collection_type_id from 
+customer c inner join loan l on l.customer_id=c.customer_id inner join (SELECT sum(amount),collection_type_id,loan_id from 
+collection  where customer_id=1 and (collection_type_id ='EMI_P'  or collection_type_id ='EMI_I')
+group by collection_type_id,loan_id) col on l.loan_id = col.loan_id join loan_type_master lm on l.loan_type_id=lm.loan_type_id 
+
+
+
+select c.customer_name,col.collection_type_id,l.loan_id,col.sum,l.loan_type_id from customer c inner join loan l on l.customer_id=c.customer_id inner join (SELECT sum(amount),collection_type_id,loan_id from  collection  where customer_id=2 and (collection_type_id ='EMI_P'  or collection_type_id ='EMI_I') group by collection_type_id,loan_id) col on l.loan_id = col.loan_id
+
+select * from loan
+
+select distinct(customer_id) from loanhow subquery works
+
+
+
+create table customer_finalpdf_bill(customer_id int,customer_name varchar(30), loan_id int ,loan_type_description varchar(30), collection_type_id varchar(30), amount int  )
+
+select * from collection
+
+select * from loan union select * from loan
+
+select count(customer_id) from collection
+
+select * from collection
+
+select * from collection where customer_id=3
+
+
+select * from customer_finalpdf_bill
+
+select count(loan_type_id) from loan
+
+select customer_id from loan
+
+select customer_id,amount from collection where customer_id=3;
+
+select * from loan
+
+
+
+select distinct(customer_id),loan_type_id from loan
+
+
+
+select * from collection
+
+select * from customer_finalpdf_bill
+
+truncate table customer_finalpdf_bill
+
+
+
+
+select * from customer_finalpdf_bill where customer_id=1 group by collection_type_id,loan_id
+
+
+select customer_name ,loan_id,loan_type_description,collection_type_id,amount from customer_finalpdf_bill where loan_id=1 and customer_id=1
+
+
+
+
+
+
+
+
+
+
+
+

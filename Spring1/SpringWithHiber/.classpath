@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/spring-orm-5.0.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/spring-dao-2.0.8.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/spring-core-5.0.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/postgresql-42.1.4.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/springjars/core/org.springframework.expression-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/springjars/core/org.springframework.core-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/springjars/core/org.springframework.context-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/springjars/core/org.springframework.beans-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/springjars/core/org.springframework.asm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/springjars/core/jmxtools-1.2.1.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/springjars/core/com.springsource.org.apache.log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/springjars/core/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/commons-dbcp-1.4(1).jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/commons-pool-1.6.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Downloads/c3p0-0.9.2.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/test/xmlunit-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/test/wstx-asl-3.2.7.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/test/org.springframework.test-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/test/easymock.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/test/com.springsource.org.testng-5.10.0.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/test/com.springsource.org.junit-4.7.0.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/test/com.springsource.org.apache.taglibs.standard-1.1.2.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/test/com.springsource.javax.inject-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/core/org.springframework.expression-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/core/org.springframework.core-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/core/org.springframework.context-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/core/org.springframework.beans-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/core/org.springframework.asm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/core/jmxtools-1.2.1.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/core/com.springsource.org.apache.log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="/home/vamsoft/Documents/springjars/core/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

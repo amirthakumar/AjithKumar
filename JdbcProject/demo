@@ -1,0 +1,5 @@
+create table empdemo1 as
+select employee_id empid,first_name fname,salary,hire_date doj,department_id deptid
+from employees;
+
+select * from empdemo1

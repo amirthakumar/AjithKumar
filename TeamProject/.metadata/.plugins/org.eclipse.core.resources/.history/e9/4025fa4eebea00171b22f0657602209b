@@ -1,0 +1,17 @@
+package in.vamsoft;
+
+import org.ho.yaml.Yaml;
+
+public class ReadYaml {
+
+	
+	public static void main(String[] args) {
+		
+		Yaml details=new Yaml();
+		Yaml.load("dbyml.yml");
+		
+		
+	}
+	
+	
+}

@@ -1,0 +1,16 @@
+package in.vamsoft;
+
+public class ProcedureDemo {
+
+	
+	public void display()
+	{
+		System.out.println("display");
+	}
+	public void print()
+	{
+		System.out.println("print");
+	}
+	
+	
+}

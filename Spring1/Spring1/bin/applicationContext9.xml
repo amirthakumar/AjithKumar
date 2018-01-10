@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="emp" class="in.vamsoft.workout.Employee">
+	
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="Ajith"></constructor-arg>
+	
+	</bean>
+	<bean id="emp1" class="in.vamsoft.workout.Employee">
+			
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="Kumar"></constructor-arg>
+	
+	</bean>
+	
+	
+	<bean id="emp2" class="in.vamsoft.workout.Employee">
+	
+	<constructor-arg value="emp1"></constructor-arg>
+		<constructor-arg ref="emp1"></constructor-arg>
+	
+	</bean>
+
+
+</beans>

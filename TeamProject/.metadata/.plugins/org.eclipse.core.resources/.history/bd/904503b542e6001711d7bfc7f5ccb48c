@@ -1,0 +1,73 @@
+package in.vamsoft.generatepdf;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.time.LocalDateTime;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+
+import in.vamsoft.generatepdf.model.Details;
+
+public class EmiPdfGenerator {
+
+	public static void generatePdf(Details details, String location) {
+
+		Document document = new Document();
+
+		try {
+
+			LocalDateTime date = LocalDateTime.now();
+			String dateStr = date.toString();
+
+			String newStr = dateStr.replaceAll("T", "_").replaceAll("-", "").replaceAll(":", "").substring(0, 14);
+			PdfWriter.getInstance(document, new FileOutputStream(location + details.getName() + "_" + newStr + ".pdf"));
+			document.open();
+
+			Paragraph para = new Paragraph(" EMI Bill ");
+			para.setAlignment(Element.ALIGN_CENTER);
+
+			Paragraph para1 = new Paragraph("  ");
+			
+			Paragraph para2 = new Paragraph(" April - March Financial Year ");
+			para.setAlignment(Element.ALIGN_CENTER);
+
+			Paragraph para3 = new Paragraph("  ");
+
+			
+			document.add(para);
+			document.add(para1);
+			document.add(para2);
+			document.add(para3);
+
+			PdfPTable table = new PdfPTable(2);
+
+			table.addCell("Name");
+			table.addCell(details.getName());
+			table.addCell("Age");
+			table.addCell(details.getAge().toString());
+			table.addCell("DOB");
+			table.addCell(details.getDob());
+			table.addCell("Aadhar");
+			table.addCell(details.getAadhar());
+			table.addCell("PAN");
+			table.addCell(details.getPan());
+
+			document.add(table);
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		document.close();
+
+	}
+}

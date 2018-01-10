@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registration Form</title>
+<style type="text/css">
+form {
+	text-align: center;
+	margin-top: 300px;
+}
+
+fieldset {
+	display: inline;
+}
+</style>
+</head>
+<body background="I67bGwL56UWq.jpg">
+
+	<form action="RegistrationServlet" method="post">
+		<fieldset>
+			<legend>Employee Information</legend>
+
+			Employee Id : <input type="text" name="empid" /><br>
+			<br> Name : <input type="text" name="name"/><br>
+			<br> Salary : <input type="text" name="sal"/><br>
+			<br> Date Of Join : <input type="date" name="doj"/><br>
+			<br> Department Id : <input type="text" name="deptid"/><br>
+			<br> <input type="submit" value="Register">
+			<input type="reset" value="Reset"><br>
+			<br>
+		</fieldset>
+	</form>
+</body>
+</html>

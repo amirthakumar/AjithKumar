@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Customer Registration Form</title>
+</head>
+<body>
+	<h2 style="background-color:teal">Registration form</h2>
+	
+		<form action="RegistrationServlet" method="post">
+    <table>
+			<tr>
+				<td>Name :</td>
+				<td><input type="text" name="name" /></td>
+			</tr>
+			<br>
+			<tr>
+				<td>DOB :</td>
+				<td><input type="text" name="dob" /></td>
+			</tr>
+			<br>
+			<tr>
+				<td>Address :</td>
+				<td><textarea rows="3" cols="30" name="address"></textarea></td>
+			</tr>
+			<br>
+			<tr>
+				<td>Phone Number :</td>
+				<td><input type="text" maxlength="10" name="phnum"></td>
+			</tr>
+			<br>
+		<tr>
+			<td>Gender :
+			<td><input type="radio" name="gender" value="Male">Male
+				<input type="radio" name="gender" value="Female">Female</td>
+		</tr>
+		<br>
+		<tr>
+			<td>Hobbies :</td>
+			<td><select name="hobbies" multiple="multiple"><br>
+					<option value="Cricket">Cricket</option>
+					<option value="Chess">Chess</option>
+					<option value="Carrom">Carrom</option>
+					<option value="Tennis">Tennis</option>
+			</select></td>
+		</tr>
+		<br>
+
+		<tr>
+			<td><input type="submit"></td>
+			<td><input type="reset"></td>
+		</tr>
+	</table>
+	<br>
+
+	</form>
+
+</body>
+</html>

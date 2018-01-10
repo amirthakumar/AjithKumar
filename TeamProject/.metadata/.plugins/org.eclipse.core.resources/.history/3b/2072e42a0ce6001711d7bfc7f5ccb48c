@@ -1,0 +1,24 @@
+package in.vamsoft.myjavaproject.JavaProjectSample;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class FinalDaoImpl {
+
+	
+	static PreparedStatement statement;
+	static Connection con=DbConnectionUtil.getConnection();
+	
+	public static void main(String[] args) {
+		
+		statement = con.prepareStatement("select c.customer_name,col.collection_type_id,l.loan_id,col.sum,
+		  l.loan_type_id from customer c inner join loan l on l.customer_id=c.customer_id inner join 
+		     (SELECT sum(amount),collection_type_id,loan_id from  collection  where customer_id=1 and 
+		      (collection_type_id ='EMI_P'  or collection_type_id ='EMI_I') group by collection_type_id,loan_id) col on l.loan_id = col.loan_id");
+		
+		
+		
+		
+	}
+
+}

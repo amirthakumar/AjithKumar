@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <?xml version="1.0" encoding="utf-8"?>
+
+<xmldata>
+    <student>
+        <RegistrationNo>1</RegistrationNo>
+        <StudentID>1110708058</StudentID>
+        <Name>Jatin</Name>
+        <FName>Patel</FName>
+    </student>
+    <student>
+        <RegistrationNo>2</RegistrationNo>
+        <StudentID>1110708048</StudentID>
+        <Name>Ashvin</Name>
+        <FName>Patel</FName>
+    </student>
+</xmldata>
+ 

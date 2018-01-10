@@ -1,0 +1,4 @@
+[main] INFO  in.vamsoft.jdbc.JdbcDemo  - Main Method Strated
+[main] ERROR in.vamsoft.jdbc.JdbcDemo  - An Error Occured in Main
+java.lang.ArithmeticException: / by zero
+	at in.vamsoft.jdbc.JdbcDemo.main(JdbcDemo.java:12)

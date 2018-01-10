@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		function UpdateRecord() {
+
+			var txtid = document.getElementById('txtid').value;
+			var txtname = document.getElementById('txtname').value;
+
+			if (txtid.length != 0 && txtname.length != 0)
+
+			{
+
+				var connection = new ActiveXObject("ADODB.Connection");
+				var connectionstring = "Data Source=.;Initial Catalog=EmpDetail;Persist Security Info=True;UserID=sa;Password=password@123;Provider=SQLOLEDB";
+
+				connection.Open(connectionstring);
+
+				var rs = new ActiveXObject("ADODB.Recordset");
+				rs.Open("update EmpSalary_Info set EmpName = '" + txtname
+						+ "' where EmpId=" + txtid, connection);
+
+				alert("Update Record Successfuly");
+				txtid.value = " ";
+
+				connection.close();
+
+			} else {
+				alert("Please textbox's value");
+
+			}
+
+		}
+	</script>
+
+
+</body>
+</html>

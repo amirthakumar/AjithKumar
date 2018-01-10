@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xmldata>
+
+	<student>
+		<Name>Ajith</Name>
+		<Age>23</Age>
+		<Qualification>B.E</Qualification>
+	</student>
+	
+</xmldata>

@@ -1,0 +1,92 @@
+package in.vamsoft.myjavaproject.JavaProjectSample;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+public class FinalDaoImpl {
+
+	static PreparedStatement statement;
+	static PreparedStatement statement1;
+	static Statement statement2;
+	static Statement statement3;
+	static Connection con = DbConnectionUtil.getConnection();
+	static ResultSet rs;
+	static ResultSet rs1;
+	static ResultSet rs2;
+	static int customerId;
+	static String customerName;
+	static int loanId;
+	static String loanDescrip;
+	static int amount;
+	static String collectionTypeId;
+	static ArrayList<Integer> list;
+
+	public static void main(String[] args) {
+
+		try {
+			statement = con.prepareStatement(
+					"select c.customer_id,c.customer_name,l.loan_id,l.loan_type_id,lm.loan_description,col.sum ,col.collection_type_id from \n"
+							+ "customer c inner join loan l on l.customer_id=c.customer_id inner join (SELECT sum(amount),collection_type_id,loan_id from \n"
+							+ "collection  where customer_id=? and (collection_type_id ='EMI_P'  or collection_type_id ='EMI_I')\n"
+							+ "group by collection_type_id,loan_id) col on l.loan_id = col.loan_id join loan_type_master lm on l.loan_type_id=lm.loan_type_id \n"
+							+ "");
+			for (int i = 1; i <= getTotalCustId(); i++) {
+				statement.setInt(1, i);
+
+				rs = statement.executeQuery();
+				while (rs.next()) {
+					customerId = rs.getInt(1);
+					customerName = rs.getString(2);
+					loanId = rs.getInt(3);
+					// rs.getString(4);
+					loanDescrip = rs.getString(5);
+					amount = rs.getInt(6);
+					collectionTypeId = rs.getString(7);
+					statement1 = con.prepareStatement(
+							"insert into customer_finalpdf_bill(customer_id,customer_name,loan_id,loan_type_description,collection_type_id,amount) values (?,?,?,?,?,?)");
+
+					statement1.setInt(1, customerId);
+					statement1.setString(2, customerName);
+					statement1.setInt(3, loanId);
+					statement1.setString(4, loanDescrip);
+					statement1.setString(5, collectionTypeId);
+					statement1.setInt(6, amount);
+					statement1.executeUpdate();
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	private static ArrayList<Integer> getCustId() throws SQLException
+	{
+		rs2=statement3.executeQuery("select distinct(customer_id) from collection ");
+		while(rs2.next())
+		{
+			
+			list.add(rs2.getInt(1));
+			
+		}
+		return list;
+		
+		return 0;
+		
+	}
+	 
+	private static int getTotalCustId() throws SQLException {
+		rs1=statement2.executeQuery("select count(customer_id) from collection"); 
+		while(rs1.next())
+		{
+			return rs1.getInt(1);
+		}
+				return 0;
+	}
+
+}

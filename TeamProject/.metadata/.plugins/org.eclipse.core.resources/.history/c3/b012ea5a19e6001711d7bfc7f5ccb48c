@@ -1,0 +1,59 @@
+package in.vamsoft.myjavaproject.JavaProjectSample;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class FinalDaoImpl {
+
+	static PreparedStatement statement;
+	static PreparedStatement statement1;
+	static Connection con = DbConnectionUtil.getConnection();
+	static ResultSet rs;
+	static int customerId;
+	static String customerName;
+	static int loanId;
+	static String loanDescrip;
+	static double amount;
+	static String collectionTypeId;
+
+	public static void main(String[] args) {
+
+		try {
+			statement = con.prepareStatement(
+					"select c.customer_id,c.customer_name,l.loan_id,l.loan_type_id,lm.loan_description,col.sum ,col.collection_type_id from \n"
+							+ "customer c inner join loan l on l.customer_id=c.customer_id inner join (SELECT sum(amount),collection_type_id,loan_id from \n"
+							+ "collection  where customer_id=1 and (collection_type_id ='EMI_P'  or collection_type_id ='EMI_I')\n"
+							+ "group by collection_type_id,loan_id) col on l.loan_id = col.loan_id join loan_type_master lm on l.loan_type_id=lm.loan_type_id \n"
+							+ "");
+
+			rs = statement.executeQuery();
+			while (rs.next()) {
+				customerId = rs.getInt(1);
+				customerName = rs.getString(2);
+				loanId = rs.getInt(3);
+				// rs.getString(4);
+				loanDescrip = rs.getString(5);
+				amount = rs.getDouble(6);
+				collectionTypeId = rs.getString(7);
+				statement1.executeUpdate(
+						"insert into customer_pdf_bill (customer_id,customer_name, loan_id ,loan_type_description, collection_type_id, amount values (?,?,?,?,?,?");
+
+				statement1.setInt(1, customerId);
+				statement1.setString(2, customerName);
+				statement1.setInt(3, loanId);
+				statement1.setString(4, loanDescrip);
+				statement1.setDouble(5, amount);
+				statement1.setString(6, collectionTypeId);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

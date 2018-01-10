@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="obj" class="in.vamsoft.settermap">
+
+		<property name="num">
+
+			<value>1</value>
+
+		</property>
+
+		<property name="question">
+
+			<value>R u Ajith...???</value>
+
+		</property>
+
+		<property name="answers">
+
+			<map>
+
+				<entry key="1" value="Yes"></entry>
+				<entry key="2" value="No"></entry>
+
+			</map>
+
+		</property>
+
+	</bean>
+
+
+</beans>

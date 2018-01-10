@@ -1,0 +1,26 @@
+package in.vamsoft.myjavaproject.JavaProjectSample;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DbConnectionUtil {
+
+	private static Connection connection = null;
+
+	public static Connection getConnection() {
+		try {
+			Class.forName("org.postgresql.Driver");
+
+			connection = DriverManager.getConnection("jdbc:postgresql://192.168.10.123:5432/sudhadb", "sudhavam", "$UDH@123");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+
+			System.out.println("Postgresql driver not found" + e.getMessage());
+		} 
+
+		return connection;
+	}
+}

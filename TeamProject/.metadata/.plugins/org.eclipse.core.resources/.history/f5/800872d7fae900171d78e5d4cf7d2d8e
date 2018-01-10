@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Students>
+
+	<name>Ajith</name>
+		
+		<Age>23</Age>
+		<Qualification>B.E</Qualification>
+
+	<name>Kumar</name>
+
+		<Age>21</Age>
+
+		<Qualification>Computer Science</Qualification>
+
+</Students>

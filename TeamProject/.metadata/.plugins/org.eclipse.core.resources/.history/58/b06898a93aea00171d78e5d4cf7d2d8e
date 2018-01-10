@@ -1,0 +1,30 @@
+package in.vamsoft;
+
+public class ProcedureDemo {
+
+	
+	int n;
+	public void display()
+	{
+		System.out.println("display");
+		print();
+		n=10;
+		samp();
+	}
+	public static void samp()
+	{
+		print();
+	}
+	public void print()
+	{
+		System.out.println("print");
+	}
+	public static void main(String... args) {
+		
+		new ProcedureDemo().display();
+		
+		
+	}
+	
+	
+}
